@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+  font-family: 'roboto', 'arial', sans-serif;
+}
+
+header h1 {
+  width: 80%;
+  margin: 10px auto;
+  font-size: 4.4rem;
+  font-weight: normal;
+  text-align: center;
+  line-height: 8vh;
+  border: 2px solid black;
+  transition: 0.3s;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+/* background-color: #cc8800;
+background-image: url('https://www.transparenttextures.com/patterns/dark-wood.png'); */
+
+body {
+  position: relative;
+  /* background-color: #faad5a; */
+  background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+  background-color: rgb(200, 150, 85);
+}
+
+.blur {
+  filter: blur(3px);
+}
+
+aside.menu {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 60vh;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.85);
+  border: 3px solid navy;
+}
+
+aside button {
+  /* width: 10%; */
+  position: absolute;
+  padding: 5px 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  line-height: 150%;
+}
+
+main {
+  display: flex;
+  justify-content: space-around;
+}
+
+main section {
+  position: relative;
+  width: 100%;
+  max-width: calc(45% - 40vh);
+  /* height: 50vh; */
+  margin: 50px 0;
+}
+
+main section div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+main section div:nth-child(1) {
+  z-index: 1;
+  top: 7.5%;
+  left: 50%;
+  width: 40%;
+  transform: translateX(-50%);
+  background-color: white;
+  border: 3px solid black;
+  font-size: 2.4rem;
+  text-align: center;
+  line-height: 120%;
+}
+
+main section div:nth-last-child(1) {
+  z-index: 0;
+  top: 10%;
+  height: 80%;
+  border: 5px solid black;
+  box-shadow: 5px 10px 10px black;
+}
+
+main div.whiteGraveyard {
+  background-color: #e2c49c;
+}
+
+main div.blackGraveyard {
+  background-color: #644624;
+  color: #eee;
+}
+
+div.board {
+  display: flex;
+  width: 80vh;
+  height: 80vh;
+  flex-wrap: wrap;
+  border: 3px solid black;
+  box-shadow: 10px 15px 10px black;
+}
+
+div div {
+  position: relative;
+  width: 12.5%;
+  height: 12.5%;
+}
+
+div img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 92%;
+  width: 92%;
+  max-height: 100px;
+  max-width: 100px;
+}
+
+img.pawn {
+  height: 65%;
+  width: 65%;
+  max-height: 100px;
+  max-width: 100px;
+}
+img.rook,
+img.knight {
+  height: 78%;
+  width: 78%;
+  max-height: 100px;
+  max-width: 100px;
+}
+img.bishop {
+  height: 85%;
+  width: 85%;
+  max-height: 100px;
+  max-width: 100px;
+}
+
+/* animacja do wykonania */
+img.selected {
+  animation: select infinite 1s linear;
+}
+
+@keyframes select {
+  0% {
+    opacity: 1;
+  }
+
+  2.5% {
+    opacity: 1;
+  }
+
+  45% {
+    opacity: 0.2;
+  }
+  55% {
+    opacity: 0.2;
+  }
+  97.5% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+div div:nth-child(odd),
+div.even:nth-child(even) {
+  background-color: #644624;
+}
+
+div div:nth-child(even),
+div.even:nth-child(odd) {
+  background-color: #e2c49c;
+}
+
+div div:nth-child(even).highlight,
+div div.even:nth-child(odd).highlight,
+div div:nth-child(odd).highlight,
+div div.even:nth-child(even).highlight {
+  border: 1px dotted white;
+  background-color: rgba(10, 30, 100, 0.9);
+}
+
+footer {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: black;
+  color: #ddd;
+  font-size: 2.4rem;
+  line-height: 3vh;
+  text-align: right;
+}
+
+footer p {
+  margin-right: 20%;
+}
